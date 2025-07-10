@@ -85,6 +85,15 @@ input[type=submit]{
 
 }
 
+input[type=submit]:hover{
+  background: #4747b8;
+}
+
+
+.acceuil a:hover {
+  background: #4747b8;
+}
+
 input[type=text]{
       color: white;
   padding: 8px;

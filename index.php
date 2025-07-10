@@ -1,17 +1,23 @@
 <?php
-function lire_dossier()
-{
-    $file_names = [];
 
-    $files_dir = opendir("photos");
+function lire_dossier(){
+    $files_names =[];
+    $photos_dir = opendir('photos');
+    $exclus = ['.', '..', '/'];
+    
 
-    do {
-        $file_name = readdir($files_dir);
-        if ($file_name && $file_name != "." && $file_name != ".." && $file_name != "/") {
-            $file_names[] = $file_name;
+    do{
+        
+        $file_name = readdir($photos_dir);
+        
+
+        if ($file_name && !in_array($file_name, $exclus)) {
+            $files_names[] = $file_name;
+
         }
-    } while ($file_name);
-    return ($file_names);
+
+    }while($file_name);
+    return ($files_names);
 }
 
 
